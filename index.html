@@ -12,16 +12,15 @@
     crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
   <link rel="stylesheet" href="css/password-checker.css">
 </head>
 
-<body>
-  <h1>Password strength checker</h1>
+<body id="body">
+  <h1>Check your password.</h1>
   <form action="">
-    <label for="email">Enter email address</label>
-    <input type="email" id="email" placeholder="sophie@example.com" required>
-    <label for="password">Enter password</label>
-    <input type="password" name="password" id="password" required>
+    <input type="email" id="email" placeholder="ENTER EMAIL ADDRESS" required>
+    <input type="password" name="password" id="password" placeholder="ENTER PASSWORD" required>
     <button>Check!</button>
   </form>
   <div id="table-div"></div>

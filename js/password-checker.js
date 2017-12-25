@@ -1,6 +1,8 @@
 $(document).ready(function() {
     const tableDiv = $("#table-div");
     const password = $("#password");
+    const body = $("body");
+
     const cells = [
         "One number",
         "One uppercasse letter",
@@ -33,6 +35,30 @@ $(document).ready(function() {
         tableDiv.append(table);
     }
 
+    function changeBackground() {
+        var countTrue = valid.reduce(function(a, b) {
+            return b ? a + 1 : a;
+        }, 0);
+
+        switch (countTrue) {
+            case 1:
+                body.css("background-color", "#FF2300");
+                break;
+            case 2:
+                body.css("background-color", "#FF6900");
+                break;
+            case 3:
+                body.css("background-color", "#FFC100");
+                break;
+            case 4:
+                body.css("background-color", "#F7FF00");
+                break;
+            case 5:
+                body.css("background-color", "#58FF00");
+                break;
+        }
+    }
+
     function checkPass() {
         valid = ["", "", "", "", ""];
         const char = password.val();
@@ -49,6 +75,7 @@ $(document).ready(function() {
                 valid[4] = true;
             }
         }
+        changeBackground();
         drawTable();
     }
 
