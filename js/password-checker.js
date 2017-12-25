@@ -5,11 +5,11 @@ $(document).ready(function() {
     let table;
 
     const cells = [
-        "One number",
+        "At least one number",
         "One uppercasse letter",
         "One lowercasse letter",
-        "At least 8 chars",
-        "At least one special char"
+        "At least eight chars",
+        "One special character"
     ];
     let valid = ["", "", "", "", ""];
 
@@ -56,7 +56,6 @@ $(document).ready(function() {
                 break;
             case 5:
                 $(":root").css("--main-color", "#266900");
-                debugger;
                 tableDiv.html('<i class="fa fa-check-circle cool done"></i>');
                 break;
         }
@@ -82,7 +81,7 @@ $(document).ready(function() {
         changeBackground();
     }
 
-    $(password).keydown(function() {
+    $(password).keyup(function() {
         checkPass();
     });
 });
