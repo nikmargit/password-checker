@@ -2,6 +2,7 @@ $(document).ready(function() {
     const tableDiv = $("#table-div");
     const password = $("#password");
     const body = $("body");
+    let table;
 
     const cells = [
         "One number",
@@ -23,10 +24,10 @@ $(document).ready(function() {
             td.html(cells[index]);
             if (valid[index]) {
                 td.attr("class", "cool");
-                td1.html('<i class="fa fa-check-circle"></i>');
+                td1.html('<i class="fa fa-check-circle cool"></i>');
             } else {
                 td.attr("class", "notCool");
-                td1.html('<i class="fa fa-times"></i>');
+                td1.html('<i class="fa fa-times notCool"></i>');
             }
             tr.append(td1);
             tr.append(td);
@@ -42,19 +43,21 @@ $(document).ready(function() {
 
         switch (countTrue) {
             case 1:
-                body.css("background-color", "#FF2300");
+                $(":root").css("--main-color", "#BE1500");
                 break;
             case 2:
-                body.css("background-color", "#FF6900");
+                $(":root").css("--main-color", "#982A00");
                 break;
             case 3:
-                body.css("background-color", "#FFC100");
+                $(":root").css("--main-color", "#723F00");
                 break;
             case 4:
-                body.css("background-color", "#F7FF00");
+                $(":root").css("--main-color", "#4C5400");
                 break;
             case 5:
-                body.css("background-color", "#58FF00");
+                $(":root").css("--main-color", "#266900");
+                debugger;
+                tableDiv.html('<i class="fa fa-check-circle cool done"></i>');
                 break;
         }
     }
@@ -75,11 +78,11 @@ $(document).ready(function() {
                 valid[4] = true;
             }
         }
-        changeBackground();
         drawTable();
+        changeBackground();
     }
 
-    $(password).keyup(function() {
+    $(password).keydown(function() {
         checkPass();
     });
 });
