@@ -84,4 +84,7 @@ $(document).ready(function() {
     $(password).keyup(function() {
         checkPass();
     });
+    $(password).keydown(function() {
+        checkPass();
+    });
 });
